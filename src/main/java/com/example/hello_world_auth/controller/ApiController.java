@@ -40,7 +40,7 @@ public class ApiController {
 
     // Document endpoints
     @GetMapping("/document.list")
-    @PreAuthorize("hasRole('ROLE_USER')")
+    @PreAuthorize("hasRole('ROLE_USER')" + " or hasRole('ROLE_ADMIN')")
     public String listDocuments() {
         log.info("Accessed /api/document.list endpoint");
         return "Here are the documents.";
